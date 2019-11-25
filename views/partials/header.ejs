@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>yelpcamp</title>
+  </head>
+
+  <body>
+    <nav
+      id="mainnavbar"
+      class="navbar navbar-light bg-light navbar-expand-md py-0"
+    >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">YelpCamp</a>
+          <button
+            class="navbar-toggler navbar"
+            data-toggle="collapse"
+            data-target="#navlinks"
+            aria-label="toggle naviagtion"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div id="navlinks" class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto">
+            <% if(!currentUser){ %>
+            <li class="nav-item">
+              <a href="/login" class="nav-link">LOGIN</a>
+            </li>
+            <li class="nav-item">
+              <a href="/register" class="nav-link">SIGNUP</a>
+            </li>
+            <% } else { %>
+            <li class="navbar-text mr-3">
+              Signed in as <%= currentUser.username %>
+            </li>
+            <li class="nav-item">
+              <a href="/logout" class="nav-link">LOGOUT</a>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>
