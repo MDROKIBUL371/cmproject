@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+
+<div class="container text-center">
+    <h1>EDIT Comment</h1>
+
+    <div class="w-50 my-3 mx-auto">
+        <form action="/campgrounds/<%= campground_id%>/comments/<%=comment._id%>?_method=put" method="post">
+            <div class="form-row">
+                <div class="col-12 form-group">
+                    <input type="text" class="form-control" value="<%=comment.text%>" name="comment[text]">
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block">submit</button>
+            </div>
+
+        </form>
+
+        <div class="d-flex justify-content-start">
+            <a href="/campgrounds">Go Back</a>
+        </div>
+    </div>
+
+</div>
+<% include ../partials/footer %>
